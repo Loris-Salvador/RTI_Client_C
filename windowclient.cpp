@@ -354,6 +354,7 @@ void WindowClient::on_pushButtonLogin_clicked()
       {
         loginOK();
         dialogueMessage("LOGIN",message);
+        Actualiser_Panier();
       }
       else if (strcmp(etat,"BAD") == 0)
       {
@@ -487,6 +488,8 @@ void WindowClient::on_pushButtonAcheter_clicked()
         setlocale(LC_NUMERIC, "C");
         prix = atof(strtok(NULL,"#"));
         setlocale(LC_NUMERIC, "");
+
+        puts(intitule);
 
         ajouteArticleTablePanier(intitule,prix,quantite);
 
