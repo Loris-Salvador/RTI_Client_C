@@ -565,17 +565,11 @@ void WindowClient::on_pushButtonViderPanier_clicked()
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void WindowClient::on_pushButtonPayer_clicked()
 {
-  char nom[30];
-
-  strcpy(nom, getNom());
 
   char requete[100];
   char reponse[100];
 
   strcpy(requete, CONFIRMER);
-  strcat(requete, CS);
-  strcat(requete, nom);
-
 
   Send(sClient, requete, strlen(requete));
   Receive(sClient, reponse);
@@ -586,11 +580,12 @@ void WindowClient::on_pushButtonPayer_clicked()
 
   if(strcmp(OK, "OK")==0)
   {
-    videTablePanier();
+    Actualiser_Panier();
     setTotal(-1);
     dialogueMessage("SUCCESS", "Achat reussi !");
   }
 
+  
 
 
 }
