@@ -392,14 +392,6 @@ void WindowClient::on_pushButtonLogout_clicked()
   char requete[200];
   char reponse[200];
 
-  sprintf(requete, "%s", CANCEL_ALL);
-
-  Send(sClient, requete, strlen(requete));
-  Receive(sClient, reponse);
-
-  strtok(reponse,"#");
-  char OK [3];
-  strcpy(OK, strtok(NULL,"#"));
 
 
 
