@@ -312,6 +312,10 @@ void WindowClient::on_pushButtonLogin_clicked()
   alarmeActivee = false;
   const char *user = getNom();
   const char *password = getMotDePasse();
+
+  if(strcmp(user, "")==0 || strcmp(password, "")==0)
+    return;
+
   bool isNewClient = isNouveauClientChecked();
 
   bool boucle = true;
